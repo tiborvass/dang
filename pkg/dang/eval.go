@@ -2375,7 +2375,7 @@ func (c *ConstructorFunction) Call(ctx context.Context, scope ValueScope, args m
 		}
 	}
 
-	return instance, nil
+	return applyConstructorHook(ctx, c.Closure, instance)
 }
 
 // checkRequiredFields verifies that all non-null fields have been assigned.
